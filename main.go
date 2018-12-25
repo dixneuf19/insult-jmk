@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/dixneuf19/insult-jmk/insult_generator"
+)
 
 func main() {
-	fmt.Println("Hello world!")
+	insults := insultGenerator.CreateInsultDict()
+	fmt.Println(insults.GenerateInsult())
 }
