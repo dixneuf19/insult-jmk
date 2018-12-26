@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/dixneuf19/insult-jmk/insult_generator"
+	"github.com/dixneuf19/insult-jmk/insulter"
 )
 
 func main() {
-	insults := insultGenerator.CreateInsultDict()
+	insults := insulter.CreateInsultDict()
 	fmt.Println(insults.GenerateInsult())
 }

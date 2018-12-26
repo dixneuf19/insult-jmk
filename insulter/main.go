@@ -1,4 +1,4 @@
-package insultGenerator
+package insulter
 
 import (
 	"math/rand"
