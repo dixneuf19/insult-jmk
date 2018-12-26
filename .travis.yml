@@ -1,1 +1,40 @@
 language: go
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
+services:
+- docker
+env:
+  global:
+  - PROJECT_NAME=dixneuf19-gke
+  - CLUSTER_NAME=your-first-cluster-1
+  - CLOUDSDK_COMPUTE_ZONE=europe-west1-d
+  - DOCKER_IMAGE_NAME=insult-jmk
+  - KUBE_DEPLOYMENT_NAME=insult-jmk
+  
+before_install:
+- openssl aes-256-cbc -K $encrypted_58209584bb7a_key -iv $encrypted_58209584bb7a_iv -in client-secret.json.enc -out client-secret.json -d
+
+script:
+- go test
+
+before_deploy:
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
+  CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+- source /home/travis/google-cloud-sdk/path.bash.inc
+- gcloud --quiet version
+- gcloud --quiet components update
+- gcloud --quiet components update kubectl
+- gcloud auth activate-service-account --key-file client-secret.json
+- gcloud --quiet config set project $PROJECT_NAME
+- gcloud --quiet config set container/cluster $CLUSTER_NAME
+- gcloud --quiet config set compute/zone ${CLOUDSDK_COMPUTE_ZONE}
+- gcloud --quiet container clusters get-credentials $CLUSTER_NAME
+- gcloud auth configure-docker
+
+deploy:
+- provider: script
+  script: bash ./deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master

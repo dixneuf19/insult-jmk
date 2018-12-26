@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${KUBE_DEPLOYMENT_NAME}-deployment
+  labels:
+    app: ${KUBE_DEPLOYMENT_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${KUBE_DEPLOYMENT_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${KUBE_DEPLOYMENT_NAME}
+    spec:
+      containers:
+      - name: $KUBE_DEPLOYMENT_NAME
+        image: gcr.io/${PROJECT_NAME}/${DOCKER_IMAGE_NAME}:${TRAVIS_COMMIT}
