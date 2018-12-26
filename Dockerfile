@@ -12,6 +12,7 @@ WORKDIR $GOPATH/src/github.com/dixneuf19/insult-jmk
 # COPY Gopkg.toml Gopkg.lock ./
 # RUN dep ensure --vendor-only
 COPY . ./
+RUN go get -t -v ./...
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /app .
 
 # Add Timezone
@@ -26,5 +27,5 @@ COPY --from=builder /app ./
 ENV ZONEINFO /zoneinfo.zip
 COPY --from=builder /zoneinfo.zip /
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-# EXPOSE 8080
+EXPOSE 50051
 ENTRYPOINT ["./app"]

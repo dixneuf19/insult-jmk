@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package insultJMK;
+
+// The greeting service definition.
+service Insulter {
+  // Sends a greeting
+  rpc GetInsult (InsultRequest) returns (InsultResponse) {}
+}
+
+// The request message containing the user's name.
+message InsultRequest {
+  string name = 1;
+}
+
+// The response message containing the insult, with user name
+message InsultResponse {
+  string message = 1;
+}

@@ -22,8 +22,26 @@ Then encrypt
 travis encrypt-file client-secret.json --add
 ```
 
-<!-- Then add at the a before
+## GRPC
+
+### Compile proto
+
+Inside the proto folder :
 
 ```bash
-openssl aes-256-cbc -K $encrypted_8301fcd250ef_key -iv $encrypted_8301fcd250ef_iv -in client-secret.json.enc -out client-secret.json -d
-``` -->
+protoc --go_out=plugins=grpc:. *.proto
+```
+
+### Test GRPC
+
+Use npm `grpcc`.
+
+```bash
+grpcc -p grpc/insult-jmk.proto -a localhost:50051 -i
+```
+
+Then, in the REPL
+
+```javascript
+client.getInsult({name: "dixneuf19"}, printReply)
+```

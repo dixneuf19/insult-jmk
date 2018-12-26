@@ -69,7 +69,7 @@ func CreateInsultDict() Insults {
 }
 
 // GenerateInsult returns an insult
-func (insults Insults) GenerateInsult() string {
+func (insults *Insults) GenerateInsult() string {
 	globalPrefix := getRandomFromSliceString(insults.Prefix)
 
 	var insultsPerGender insultGender
