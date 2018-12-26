@@ -19,3 +19,16 @@ spec:
         image: gcr.io/${PROJECT_NAME}/${DOCKER_IMAGE_NAME}:${TRAVIS_COMMIT}
         ports:
         - containerPort: 50051
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: "${KUBE_DEPLOYMENT_NAME}-service"
+spec:
+  type: LoadBalancer
+  selector:
+    app: $KUBE_DEPLOYMENT_NAME
+  ports:
+  - protocol: TCP
+    port: 50051
+    targetPort: 50051
