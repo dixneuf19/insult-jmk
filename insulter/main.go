@@ -31,14 +31,14 @@ func CreateInsultDict() Insults {
 			"raton-laveur", "grumly", "lépreux",
 			"hamster", "branloman", "chuck norris",
 			"morbak", "jésus", "jedi", "haricot", "poireau",
-			"triton", "larve", "chnoque", "sax alto", "urinoir", "tes morts",
+			"triton", "larve", "chnoque", "sax alto", "chiottes"
 		},
 		Suffix: []string{
 			"vert", "orange", "communiste", "capitaliste",
 			"immonde", "gaulliste", "jaune", "bleu", "marron",
 			"sale", "obèse", "infecte", "poilu", "puant",
 			"végétarien", "pédéraste", "végétatif",
-			"néandertalien", "de nazareth",
+			"néandertalien", "de nazareth", "de tes morts"
 		},
 	}
 	femaleInsults := insultGender{
