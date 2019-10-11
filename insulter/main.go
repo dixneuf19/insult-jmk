@@ -25,20 +25,20 @@ func CreateInsultDict() Insults {
 			"bite de", "crouton de", "foutre de", "poil de",
 			"marchand de", "suceur de", "mangeur de",
 			"buveur de", "dealer de", "fabriquant de",
-			"rongeur de", "voleur de",
+			"rongeur de", "voleur de", "urinoir à"
 		},
 		Name: []string{
 			"raton-laveur", "grumly", "lépreux",
 			"hamster", "branloman", "chuck norris",
 			"morbak", "jésus", "jedi", "haricot", "poireau",
-			"triton", "larve", "chnoque", "sax alto", "urinoir", "tes morts",
+			"triton", "larve", "chnoque", "sax alto",
 		},
 		Suffix: []string{
 			"vert", "orange", "communiste", "capitaliste",
 			"immonde", "gaulliste", "jaune", "bleu", "marron",
 			"sale", "obèse", "infecte", "poilu", "puant",
 			"végétarien", "pédéraste", "végétatif",
-			"néandertalien", "de nazareth",
+			"néandertalien", "de nazareth", "royal"
 		},
 	}
 	femaleInsults := insultGender{
@@ -52,11 +52,11 @@ func CreateInsultDict() Insults {
 		Name: []string{
 			"conne", "grosse autiste", "vache", "louloute", "tache",
 			"punaise", "mamie", "pomme-de-terre", "moule",
-			"raclure", "vieille ordure", "larve", "chnoque", "mamans",
+			"raclure", "vieille ordure", "larve", "chnoque", "mamans", "chiottes",
 		},
 		Suffix: []string{
 			"verte", "orange", "communiste", "poilue", "puante",
-			"vegetarienne", "moche", "neandertalienne",
+			"vegetarienne", "moche", "neandertalienne", "royale"
 		},
 	}
 	return Insults{
