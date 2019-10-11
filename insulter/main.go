@@ -31,7 +31,7 @@ func CreateInsultDict() Insults {
 			"raton-laveur", "grumly", "lépreux",
 			"hamster", "branloman", "chuck norris",
 			"morbak", "jésus", "jedi", "haricot", "poireau",
-			"triton", "larve", "chnoque","sax alto", "urinoir", "tes morts"
+			"triton", "larve", "chnoque", "sax alto", "urinoir", "tes morts",
 		},
 		Suffix: []string{
 			"vert", "orange", "communiste", "capitaliste",
@@ -52,7 +52,7 @@ func CreateInsultDict() Insults {
 		Name: []string{
 			"conne", "grosse autiste", "vache", "louloute", "tache",
 			"punaise", "mamie", "pomme-de-terre", "moule",
-			"raclure", "vieille ordure", "larve", "chnoque", "mamans"
+			"raclure", "vieille ordure", "larve", "chnoque", "mamans",
 		},
 		Suffix: []string{
 			"verte", "orange", "communiste", "poilue", "puante",
